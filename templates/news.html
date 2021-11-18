@@ -25,12 +25,12 @@ News
         {% for new in news %}
             <tr>
                 <td>
-                    {{ new.title }}
+                    {{ new.title|censor }}
                 <td>
                     {{ new.created| date:'D M Y H:m' }}
                 </td>
                 <td>
-                    {{ new.text|truncatechars:50 }}
+                    {{ new.text|truncatechars:50 |censor }}
                 </td>
             </tr>
         {% endfor %}
